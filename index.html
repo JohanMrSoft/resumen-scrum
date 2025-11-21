@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum - Resumen + Sopa de Letras</title>
+    <style>
+        :root {
+--bg: #f5f6fa;
+--card: #ffffff;
+--primary: #4f46e5;
+--primary-dark: #4338ca;
+--text: #1f2937;
+--text-light: #6b7280;
+--radius: 16px;
+}
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Inter", sans-serif;
+}
+
+
+body {
+background: var(--bg);
+color: var(--text);
+}
+
+
+header {
+background: var(--card);
+padding: 25px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 10;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+header h1 {
+font-size: 1.7rem;
+font-weight: 700;
+color: var(--primary);
+}
+
+.container {
+max-width: 1200px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+
+.section-card {
+background: var(--card);
+border-radius: var(--radius);
+padding: 30px;
+margin-bottom: 30px;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+
+h2 {
+font-size: 1.6rem;
+color: var(--primary);
+font-weight: 700;
+margin-bottom: 15px;
+}
+
+
+h3 {
+margin: 25px 0 10px;
+font-size: 1.3rem;
+font-weight: 700;
+}
+
+
+p, li {
+font-size: 0.95rem;
+color: var(--text-light);
+line-height: 1.7;
+}
+
+
+ul, ol {
+margin-left: 20px;
+}
+
+/* --- GAME SECTION --- */
+.game-container {
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+.words-list {
+background: #f3f4f6;
+padding: 15px;
+border-radius: var(--radius);
+margin-bottom: 20px;
+}
+
+
+.words-list ul {
+display: flex;
+list-style: none;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+}
+
+
+.words-list li {
+padding: 8px 15px;
+border-radius: 30px;
+background: var(--card);
+border: 2px solid var(--primary);
+color: var(--primary);
+font-weight: 600;
+transition: 0.3s ease;
+}
+
+
+.words-list li.found {
+background: #22c55e;
+border-color: #22c55e;
+color: white;
+text-decoration: line-through;
+}
+
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+gap: 6px;
+margin: 20px auto;
+max-width: 500px;
+}
+
+
+.cell {
+aspect-ratio: 1;
+background: #eef0f5;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.1rem;
+font-weight: 700;
+color: var(--text);
+cursor: pointer;
+transition: 0.25s ease;
+}
+
+
+.cell:hover {
+transform: scale(1.1);
+background: var(--primary);
+color: white;
+}
+
+
+.cell.selected {
+background: var(--primary);
+color: white;
+}
+
+
+.cell.found {
+background: #22c55e;
+color: white;
+}
+
+.reset-btn {
+margin-top: 20px;
+padding: 12px 30px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 25px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+}
+
+
+.reset-btn:hover {
+background: var(--primary-dark);
+}
+
+
+.message {
+margin-top: 20px;
+font-size: 1rem;
+font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>📘 SCRUM - Resumen Completo + Sopa de Letras</h1>
+</header>
+
+<div class="container">
+
+    <div class="section-card">
+        <h2>Resumen Detallado de Scrum</h2>
+        <p>Scrum es un marco de trabajo ágil utilizado para desarrollar productos en entornos complejos y cambiantes. Permite adaptarse rápidamente y entregar valor continuo.</p>
+    </div>
+
+    <div class="section-card">
+        <h3>¿Qué es Scrum?</h3>
+        <p>Scrum es un marco de trabajo ágil que permite desarrollar productos complejos en entornos cambiantes e inciertos. Nació en Japón en los años 80 y se aplica principalmente en desarrollo de software, aunque sirve para cualquier proyecto que requiera innovación y adaptación rápida.</p>
+    </div>
+
+    <div class="section-card">
+        <h3>ROLES DE SCRUM</h3>
+        <ol>
+            <li><strong>Product Owner:</strong>(propietario del producto)</li>
+            <p><strong>Responsabilidades:</strong>Maximizar el valor del producto</p>
+            <h4>Funciones</h4>
+            <ul>
+                <li>Gestionar el Product Backlog</li>
+                <li>Define qué funcionalidades son más importantes</li>
+                <li>Representa al cliente y usuarios finales</li>
+                <li>Toma decisiones sobre el producto</li>
+                <li>Debe conocer el negocio y las necesidades del mercado</li>
+            </ul>
+            <p><strong>Requisito:</strong> SOLO puede haber UNA persona en este rol</p>
+            
+            <li><strong>Scrum Master:</strong>(facilitador del proceso)</li>
+            <p><strong>Responsabilidades:</strong>Asegurar que Scrum se entienda y se implemente correctamente</p>
+            <h4>Funciones</h4>
+            <ul>
+                <li>Facilitar las ceremonias de Scrum</li>
+                <li>Ayudar al equipo a eliminar impedimentos</li>
+                <li>Proteger al equipo de distracciones externas</li>
+                <li>Fomentar la mejora continua</li>
+                <li>Actuar como coach para el equipo y la organización</li>
+            </ul>
+            <p><strong>Requisito:</strong> SOLO puede haber UNA persona en este rol</p>
+
+            <li><strong>Development Team:</strong>(equipo de desarrollo)</li>
+            <p><strong>Responsabilidades:</strong>Entregar incrementos de producto potencialmente liberables al final de cada Sprint</p>
+            <h4>Funciones</h4>
+            <ul>
+                <li>Autoorganización y multifuncionalidad</li>
+                <li>Colaboración estrecha con el Product Owner</li>
+                <li>Participación activa en las ceremonias de Scrum</li>
+                <li>Responsabilidad compartida por la calidad del producto</li>
+            </ul> 
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h3>ARTEFACTOS DE SCRUM (Herramientas)</h3>
+        <ol>
+            <li><strong>Product Backlog</strong> (Pila del Producto)</li>
+            <p><strong>Ques es:</strong>Lista ordenada de TODO lo que se necesita en el producto</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Siempre está cambiando (documento vivo)</li>
+                <li>Priorizado por el Product Owner</li>
+                <li>Contiene Historias de Usuario</li>
+                <li>Los elementos más importantes están más detallados</li>
+            </ul>
+            <br>
+            <li><strong>Sprint Backlog</strong> (Pila del Sprint)</li>
+            <p><strong>Qué es:</strong>Lista de tareas que el equipo hará en el sprint actual</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Seleccionado del Product Backlog</li>
+                <li>Solo el equipo puede modificarlo</li>
+                <li>Incluye el objetivo del sprint</li>
+                <li>Visible para todos (tablero físico o digital)</li>
+            </ul>
+            <br>
+            <li><strong>Incremento</strong></li>
+            <p><strong>Qué es:</strong>Parte del producto TERMINADA y FUNCIONAL al final del sprint</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Debe estar listo para usarse</li>
+                <li>Debe cumplir con la "Definition of Done" (criterios de calidad)</li>
+                <li>Es acumulativo (suma lo anterior + lo nuevo)</li>
+                <li>Debe ser demostrable al cliente</li>
+            </ul>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h3>EVENTOS DE SCRUM</h3>
+        <ol>
+            <li><strong>Sprint</strong></li>
+            <p><strong>Qué es:</strong>Periodo fijo (generalmente 2-4 semanas) donde se desarrolla un incremento del producto</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Comienza con una planificación (Sprint Planning)</li>
+                <li>Termina con una revisión (Sprint Review) y retrospectiva (Sprint Retrospective)</li>
+                <li>No se permiten cambios que afecten el objetivo del sprint</li>
+                <li>Debe ser consistente en duración</li>
+            </ul>
+            <br>
+            <li><strong>Sprint Planning</strong></li>
+            <p><strong>Qué es:</strong>Reunión al inicio del sprint para planificar el trabajo a realizar</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Participan Product Owner, Scrum Master y Development Team</li>
+                <li>Se define el objetivo del sprint</li>
+                <li>Se seleccionan los elementos del Product Backlog para el sprint</li>
+                <li>El equipo estima y descompone las tareas</li>
+            </ul>
+            <br>
+            <li><strong>Daily Scrum</strong></li>
+            <p><strong>Qué es:</strong>Reunión diaria de 15 minutos para sincronizar actividades y planificar las próximas 24 horas</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Solo participa el Development Team (Scrum Master puede asistir)</li>
+                <li>Cada miembro responde a 3 preguntas clave</li>
+                <li>Ayuda a identificar impedimentos rápidamente</li>
+                <li>Mantiene al equipo enfocado en el objetivo del sprint</li>
+            </ul>
+            <br>
+            <li><strong>Sprint Review</strong></li>
+            <p><strong>Qué es:</strong>Reunión al final del sprint para revisar el incremento y adaptar el Product Backlog si es necesario</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Participan todos los interesados (stakeholders)</li>
+                <li>Se demuestra el trabajo completado</li>
+                <li>Se recopilan feedback y sugerencias</li>
+                <li>Se actualiza el Product Backlog según el feedback</li>
+            </ul>
+            <br>
+            <li><strong>Sprint Retrospective</strong></li>
+            <p><strong>Qué es:</strong>Reunión al final del sprint para reflexionar sobre el proceso y buscar mejoras</p>
+            <h4>Características</h4>
+            <ul>
+                <li>Participan Product Owner, Scrum Master y Development Team</li>
+                <li>Se analizan qué fue bien, qué no y cómo mejorar</li>
+                <li>Se crean planes de acción para el próximo sprint</li>
+                <li>Fomenta la mejora continua del equipo</li>
+            </ul>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h3>VALORES DE SCRUM</h3>
+        <p>Scrum se basa en 5 valores fundamentales que guían el comportamiento del equipo:</p>
+        <ol>
+            <li><strong>Compromiso:</strong>Todos los miembros del equipo se comprometen a alcanzar los objetivos del sprint y del proyecto.</li> <br>
+            <li><strong>Coraje:</strong>El equipo debe tener el valor de enfrentar desafíos, admitir errores y proponer nuevas ideas.</li> <br>
+            <li><strong>Foco:</strong>Durante el sprint, el equipo se concentra en el trabajo acordado y evita distracciones.</li><br>
+            <li><strong>Apertura:</strong>Se fomenta la transparencia y la comunicación abierta entre todos los miembros del equipo y stakeholders.</li><br>
+            <li><strong>Respeto:</strong>Los miembros del equipo se respetan mutuamente, valorando las habilidades y contribuciones de cada uno.</li><br>
+        </ol>
+        <p>Estos valores son esenciales para crear un ambiente de trabajo colaborativo y efectivo, donde el equipo pueda adaptarse rápidamente a los cambios y entregar valor continuo al cliente.</p>
+        <br>
+        <h3>PRICIPIOS CLAVE</h3>
+        <ol>
+            <li><strong>Transparencia:</strong>Todos los aspectos del proceso Scrum deben ser visibles para aquellos responsables del resultado.</li><br>
+            <li><strong>Inspección:</strong>Los artefactos y el progreso hacia los objetivos deben ser inspeccionados regularmente para detectar variaciones no deseadas.</li><br>
+            <li><strong>Adaptación:</strong>Si se detectan desviaciones significativas, el proceso o el producto deben ajustarse lo antes posible.</li><br>
+            <li><strong>Iterativo e Incremental:</strong>Scrum promueve el desarrollo iterativo e incremental, permitiendo entregas frecuentes y adaptaciones basadas en feedback.</li><br>
+            <li><strong>Colaboración:</strong>El éxito de Scrum depende de la colaboración estrecha entre todos los roles y stakeholders involucrados.</li><br>
+            <li><strong>Entrega de Valor:</strong>El enfoque principal de Scrum es entregar valor continuo al cliente a través de incrementos funcionales del producto.</li><br>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h3>HERRAMINTAS COMPLEMENTARIAS</h3>
+        <p>Existen varias herramientas que pueden complementar la implementación de Scrum y facilitar la gestión del proyecto:</p>
+        <ul>
+            <h4>Definition of Done</h4>
+            <p>Conjunto de criterios que deben cumplirse para considerar una tarea o historia de usuario como "terminada".</p><br>
+            <ul>
+                <li>codigo escrito</li>
+                <li>Probado</li>
+                <li>Documentado</li>
+                <li>Revisado</li>
+                <li>Sin errores</li>
+            </ul>
+            <br>
+            <h4>Historias de Usuario</h4>
+            <p>Descripción breve y simple de una funcionalidad desde la perspectiva del usuario final.</p><br>
+            <ul>
+                <li>Como [tipo de usuario], quiero [funcionalidad] para [beneficio].</li>
+            </ul>  
+            <br> 
+            <p><strong>Ejemplo:</strong>"Como cliente, quiero guardar productos en favoritos para comprarlos después"</p>
+            <br>
+            <h4>Puntos de Historia</h4>
+            <p>Métrica utilizada para estimar el esfuerzo relativo de las historias de usuario.</p>
+            <br>
+            <h4>Velocidad de Equipo</h4>
+            <p>Mide la cantidad de trabajo que un equipo puede completar en un sprint, generalmente en puntos de historia.</p>
+    </div>
+
+    <div class="section-card">
+        <h3>BENEFICIOS DE SCRUM</h3>
+        <ul>
+            <li>Mayor flexibilidad y adaptabilidad a cambios</li>
+            <li>Entrega continua de valor al cliente</li>
+            <li>Mejora de la comunicación y colaboración del equipo</li>
+            <li>Reducción de riesgos mediante entregas frecuentes</li>
+            <li>Fomento de la innovación y creatividad</li>
+            <li>Mayor satisfacción del cliente</li>
+    </div>
+
+    <div class="section-card">
+        <h3>ERRORES COMUNES</h3>
+        <ul>
+            <li>No definir claramente los roles y responsabilidades</li>
+            <li>Falta de compromiso del equipo</li>
+            <li>No seguir los eventos y ceremonias de Scrum</li>
+            <li>Subestimar la importancia del Product Backlog</li>
+            <li>No adaptarse a los cambios rápidamente</li>
+            <li>Falta de comunicación abierta y transparencia</li>
+    </div>
+
+        <div class="game-container">
+            <h1>🔍 Sopa de Letras - Scrum</h1>
+            <p class="subtitle">Encuentra las 5 palabras clave de Scrum</p>
+
+            <div class="words-list">
+                <h3>Palabras a encontrar:</h3>
+                <ul id="wordsList">
+                    <li data-word="SPRINT">SPRINT</li>
+                    <li data-word="SCRUM">SCRUM</li>
+                    <li data-word="AGIL">ÁGIL</li>
+                    <li data-word="EQUIPO">EQUIPO</li>
+                    <li data-word="DAILY">DAILY</li>
+                </ul>
+            </div>
+
+            <div class="grid-container" id="grid"></div>
+
+            <div class="message" id="message"></div>
+
+            <button class="reset-btn" onclick="resetGame()">🔄 Reiniciar Juego</button>
+        </div>
+</div>
+
+<footer style="text-align: center; padding: 20px; color: var(--text-dark);">
+    <p >Johan Blandon - jblandonfe@cesde.net</p>  
+    <p >Karent Rodriguez - kyrodriguezch@cesde.net</p>
+    <p >Alex Chavarriga - dchavarriagaal1@cesde.net</p>
+    <p >Edier Ospina - eospinaal@cesde.net</p>
+</footer>
+
+<!-- ======================= SCRIPT ORIGINAL DEL JUEGO ======================= -->
+<script>
+const grid = [
+['P','O','T','Y','Z','A','B','C','D','E'],
+['R','W','E','Q','U','I','P','O','F','G'],
+['I','Q','A','G','I','L','M','N','H','I'],
+['N','S','D','F','G','H','J','K','L','J'],
+['T','A','I','L','Y','Z','X','C','V','K'],
+['R','B','N','M','Q','W','E','R','T','L'],
+['D','A','I','L','Y','U','I','O','P','M'],
+['E','Q','U','I','P','O','A','S','D','N'],
+['F','G','H','J','K','L','Z','X','C','O']
+];
+
+
+const words = [
+{ word:'SPRINT'},
+{ word:'SCRUM'},
+{ word:'AGIL'},
+{ word:'EQUIPO'},
+{ word:'DAILY'}
+];
+
+
+let selectedCells = [];
+let foundWords = [];
+
+
+function createGrid() {
+const gridContainer = document.getElementById('grid');
+gridContainer.innerHTML = '';
+
+
+for (let i = 0; i < 10; i++) {
+for (let j = 0; j < 10; j++) {
+const c = document.createElement('div');
+c.className = 'cell';
+c.textContent = grid[i][j];
+c.dataset.row = i;
+c.dataset.col = j;
+c.addEventListener('click', () => selectCell(i, j, c));
+gridContainer.appendChild(c);
+}
+}
+}
+
+
+function selectCell(row, col, el) {
+const key = `${row}-${col}`;
+
+
+if (el.classList.contains('found')) return;
+
+
+if (el.classList.contains('selected')) {
+el.classList.remove('selected');
+selectedCells = selectedCells.filter(c => c.key !== key);
+} else {
+el.classList.add('selected');
+selectedCells.push({ row, col, key, element: el });
+}
+
+
+checkWord();
+}
+
+
+function checkWord() {
+if (!selectedCells.length) return;
+
+
+const selectedWord = selectedCells
+.sort((a, b) => (a.row - b.row) || (a.col - b.col))
+.map(c => grid[c.row][c.col])
+.join('');
+
+
+words.forEach(w => {
+if (selectedWord === w.word && !foundWords.includes(w.word)) {
+foundWords.push(w.word);
+
+
+selectedCells.forEach(cell => {
+cell.element.classList.remove('selected');
+cell.element.classList.add('found');
+});
+
+
+document.querySelector(`[data-word="${w.word}"]`).classList.add('found');
+
+
+document.getElementById('message').textContent = `¡Encontraste ${w.word}!`;
+}
+});
+
+
+selectedCells = [];
+}
+
+
+function resetGame() {
+foundWords = [];
+selectedCells = [];
+
+
+document.querySelectorAll('.cell').forEach(c => c.className = 'cell');
+document.querySelectorAll('.words-list li').forEach(li => li.classList.remove('found'));
+document.getElementById('message').textContent = '';
+}
+
+
+createGrid();
+</script>
+
+</body>
+</html>
